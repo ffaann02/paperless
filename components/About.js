@@ -11,15 +11,14 @@ const useStyles = makeStyles({
         width:"300px",
     },
     underLineHead:{
-        width:"120px",
+        width:"150px",
         border:"2px solid #FED053",
         borderRadius:"10px",
         backgroundColor:"#FED053"
     },
     bestPointIcon:{
-        width:"125px",
-        height:"125px",
-        marginTop:"10px"
+        width:"150px",
+        height:"150px",
     }
 }, { name: "MuiExample_Component" })
 
@@ -50,10 +49,10 @@ const SeeServiceButton = styled(Button)(({ theme }) => ({
     }
 }))
 
-export default function Banner() {
+export default function About() {
     const classes = useStyles();
     return (
-        <Grid container sx={{ width: "100%", height: "90vh" }}>
+        <Grid container sx={{ width: "100%", height: "90vh" ,marginTop:"20px"}}>
             <Grid item lg={12} sx={{
                 width: "100%", height: "45vh"
                 , backgroundImage: `url(${"ShinyOverlay.png"})`, backgroundRepeat:"no-repeat",padding: "0px calc((100vw - 984px) / 2)", display: "flex"
@@ -76,35 +75,35 @@ export default function Banner() {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid item lg={12} sx={{textAlign:"center",padding: "0px calc((100vw - 984px) / 2)",marginTop:"20px"}}>
+            <Grid lg={12} sx={{textAlign:"center",padding: "0px calc((100vw - 984px) / 2)",marginTop:"20px"}}>
                 <Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>OUR BEST POINT</Typography>
                 <hr className={classes.underLineHead}/>
-                <Grid container sx={{width:"100%",display:"flex",height:"35vh",marginTop:"15px"}}>
-                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column"}}>
-                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px",backgroundColor:"#C0DFD9",borderRadius:"20px 20px 0 0",margin:"0 10px"}}>
+                <Grid container sx={{width:"100%",display:"flex",height:"35vh"}}>
+                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column",position:"relative"}}>
+                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px"}}>
                             <img src="/flatIcon/free.png" className={classes.bestPointIcon}/>
                         </Box>
-                        <Box sx={{height:"40%",zIndex:"1",backgroundColor:"#FFEF82",borderRadius:"0 0 20px 20px",padding:"10px",margin:"0 10px"}}>
+                        <Box sx={{height:"40%",zIndex:"1"}}>
                             <Typography variant="h6">It's FREE!</Typography>
                             <Typography variant="a">Don't pay any single bill</Typography>
                         </Box>
                         {/*<Box sx={{position:"absolute",backgroundColor:"#FFE59D",width:"100%",height:"100%",zIndex:"0",borderRadius:"200px"}}></Box>*/}
                     </Grid>
-                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column"}}>
-                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px",backgroundColor:"#C0DFD9",borderRadius:"20px 20px 0 0",margin:"0 10px"}}>
+                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column",position:"relative"}}>
+                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px"}}>
                             <img src="/flatIcon/picture.png" className={classes.bestPointIcon}/>
                         </Box>
-                        <Box sx={{height:"40%",zIndex:"1",backgroundColor:"#FFEF82",borderRadius:"0 0 20px 20px",padding:"10px",margin:"0 10px"}}>
+                        <Box sx={{height:"40%",zIndex:"1"}}>
                             <Typography variant="h6">NEVER LOST</Typography>
                             <Typography variant="a">We keep your memories forever</Typography>
                         </Box>
                         {/*<Box sx={{position:"absolute",backgroundColor:"#FFE59D",width:"100%",height:"100%",zIndex:"0",borderRadius:"200px"}}></Box>*/}
                     </Grid>
-                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column"}}>
-                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px",backgroundColor:"#C0DFD9",borderRadius:"20px 20px 0 0",margin:"0 10px"}}>
+                    <Grid item lg={4} sx={{display:"flex",flexDirection:"column",position:"relative"}}>
+                        <Box sx={{height:"60%",zIndex:"1",marginTop:"20px"}}>
                             <img src="/flatIcon/easy.png" className={classes.bestPointIcon}/>
                         </Box>
-                        <Box sx={{height:"40%",zIndex:"1",backgroundColor:"#FFEF82",borderRadius:"0 0 20px 20px",padding:"10px",margin:"0 10px"}}>
+                        <Box sx={{height:"40%",zIndex:"1"}}>
                             <Typography variant="h6">EASY</Typography>
                             <Typography variant="a">With Simple Tools</Typography>
                         </Box>
