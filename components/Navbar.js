@@ -36,6 +36,17 @@ const NavbarButton = styled(Button)(({theme})=>({
     boxShadow:"none",
     color:"black",
     "&:hover":{
+        backgroundColor:"#FFEF82",
+        boxShadow:"none",
+    }
+}))
+const SignInButton = styled(Button)(({theme})=>({
+    borderRadius:"10px",
+    padding:"6px 10px",
+    backgroundColor:"#FFEF82",
+    boxShadow:"none",
+    color:"#3B3F46",
+    "&:hover":{
         backgroundColor:"#FED053",
         boxShadow:"none",
     }
@@ -64,7 +75,7 @@ export default function Navbar(){
                         <NavbarButton variant="contained">CONTACT</NavbarButton>
                         <Box>
                             <NavbarButton variant="contained">REGISTER</NavbarButton>
-                            <NavbarButton variant="contained" sx={{marginLeft:"10px"}}>SIGN IN</NavbarButton>
+                            <SignInButton variant="contained" sx={{marginLeft:"10px"}}>SIGN IN</SignInButton>
                         </Box>
                     </Grid>
                 </Grid>

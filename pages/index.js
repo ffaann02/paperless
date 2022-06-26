@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import Head from 'next/head'
 import Image from 'next/image'
-import Banner from '../components/Banner'
+import HeroBlock from '../components/HeroBlock'
 
 export default function Home() {
   return (
@@ -12,8 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box id="content-wrapper" sx={{backgroundColor:"#EEEEEE",top:"60px",position:"relative",width:"100%",height:"100vh"}}>
-        <Banner/>
-        <Box sx={{padding:"0px calc((100vw - 984px) / 2)"}}>HELLO</Box>
+        <HeroBlock/>
       </Box>
 
     </Box>
