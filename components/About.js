@@ -23,17 +23,38 @@ const useStyles = makeStyles({
     }
 }, { name: "MuiExample_Component" })
 
+const GetStartAboutUsButton = styled(Button)(({ theme }) => ({
+    borderRadius: "10px",
+    padding: "10px 14px",
+    width:"200px",
+    border:"2px solid #47B5FF",
+    backgroundColor:"rgba(0,0,0,0)",
+    boxShadow: "none",
+    color: "#47B5FF",
+    fontWeight:"600",
+    marginTop:"5px",
+    "&:hover": {
+        backgroundColor: "#47B5FF",
+        boxShadow: "none",
+        color:"white"
+    
+    }
+}))
 
 export default function About() {
     const classes = useStyles();
     return (
         <Grid container sx={{ width: "100%", height: "40vh" ,marginTop:"30px",padding: "0px calc((100vw - 984px) / 2)"}}>
-            <Grid item lg={8} sx={{height:"100%",marginTop:"10px",padding:"20px",display:"flex",flexDirection:"column"}}>
-            <Box sx={{textAlign:"left"}}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>ABOUT US</Typography>
+            <Grid item lg={8} sx={{height:"100%",padding:"20px",display:"flex",flexDirection:"column"}}>
+            <Box sx={{textAlign:"left"}}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C",fontSize:"24px"}}>ABOUT US</Typography>
             <hr className={classes.underLineAboutUs}/></Box>
-            <Box id="description">
-                <Typography variant="a"></Typography>
+            <Typography variant="h5" sx={{fontWeight:"600",color:"#205375",fontSize:"36px"}}>We reduce paper use</Typography>
+            <Box id="description" sx={{marginTop:"10px"}}>
+                <Typography variant="a" sx={{lineHeight:"2",fontSize:"15px"}}>Paperless, the website use to write wishes and invitations on paper in online form, 
+                including wedding, friendships, name card and etc. The important thing is it's free. We don't charge you any $.
+                Real paper can be lost or destroyed. But we keep your memories forever. Try it out now! You won't regret it.</Typography>
             </Box>
+            <GetStartAboutUsButton variant="contained">GET STARTED</GetStartAboutUsButton>
             </Grid>
             <Grid item lg={4} sx={{height:"100%",marginTop:"10px"}}>
                 <img src="/paper.png" className={classes.paperAboutUs}/>
