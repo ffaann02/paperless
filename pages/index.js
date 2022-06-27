@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About'
 import HeroBlock from '../components/HeroBlock'
+import Services from '../components/Services'
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       </Head>
       <Box id="content-wrapper" sx={{backgroundColor:"white",top:"60px",position:"relative",width:"100%",height:"100%"}}>
         <HeroBlock/>
-        {/*<About/>*/}
+        <About/>
+        <Services/>
       </Box>
 
     </Box>
