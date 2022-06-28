@@ -38,7 +38,7 @@ const ServiceBox = styled(Box)(({ theme }) => ({
     },
     "&:hover #serviceButton":{
         backgroundColor:"#47B5FF",
-        color:"white"
+        color:"white",
     }
     
 }))
@@ -102,7 +102,7 @@ export default function Services() {
                 </Grid>
                 <Grid item lg={4} sx={{padding:"10px 7px"}}>
                 <ServiceBox>
-                        <img src="https://cdn-icons.flaticon.com/png/512/2065/premium/2065224.png?token=exp=1656398302~hmac=99e87817daa8236939b2def35a8edb4b" className={classes.serviceIcon}/>
+                        <img src="https://cdn-icons.flaticon.com/png/512/1365/premium/1365358.png?token=exp=1656429553~hmac=387bc068c61fd040634670bb6c691519" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Review</Typography>
                         <Typography variant="a" sx={{fontSize:"16px"}}>Let people comment your profile and work</Typography>
                         <Typography variant="h6" sx={{marginTop:'10px'}}>Coming soon...</Typography>
