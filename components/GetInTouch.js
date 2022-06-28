@@ -23,6 +23,7 @@ const useStyles = makeStyles({
     },
     contactImg:{
         width:"90%",
+        marginTop:"30px"
     }
     
 }, { name: "MuiExample_Component" })
@@ -71,7 +72,7 @@ export default function GetInTouch() {
             <hr className={classes.underLineHead}/>
             <Grid container>
                 <Grid item lg={6} sx={{heigt:"100%"}}>
-                    <img src="/teamContact.svg" className={classes.contactImg}/>
+                    <img src="/teamContact02.svg" className={classes.contactImg}/>
                 </Grid>
                 <Grid item lg={6} sx={{heigt:"100%",padding:"20px"}}>
                     <Box sx={{display:"flex"}}>
