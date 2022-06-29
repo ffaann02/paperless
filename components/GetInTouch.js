@@ -48,19 +48,22 @@ const ServiceBox = styled(Box)(({ theme }) => ({
     
 }))
 
-const GetStartServiceButton = styled(Button)(({ theme }) => ({
-    transitionDuration:"0.5s",
-    borderRadius: "10px",
+const ContactSumbitButton = styled(Button)(({ theme }) => ({
+    borderRadius: "5px",
     padding: "10px 14px",
-    width:"150px",
-    border:"2px solid #47B5FF",
+    width:"100%",
+    border:"2px solid #EC9C04",
     backgroundColor:"rgba(0,0,0,0)",
     boxShadow: "none",
-    color: "#47B5FF",
+    color: "#EC9C04",
+    fontSize:"16px",
     fontWeight:"600",
     marginTop:"7px",
     "&:hover":{
-        boxShadow:"none"
+        boxShadow:"none",
+        color:"white",
+        border:"2px solid #EC9C04",
+        backgroundColor:"#EC9C04"
     }
 }))
 
@@ -82,6 +85,7 @@ export default function GetInTouch() {
                     <TextField id="email" variant="outlined" label="Email" sx={{width:"100%",marginTop:"10px"}} color="secondary"/>
                     <TextField id="topic" variant="outlined" label="What can we help you with?" sx={{width:"100%",marginTop:"10px"}} color="secondary"/>
                     <TextField id="detail" variant="outlined" label="Details" rows={5} multiline sx={{width:"100%",marginTop:"10px"}} color="secondary"/>
+                    <ContactSumbitButton variant="outlined">SUBMIT</ContactSumbitButton>
                 </Grid>
             </Grid>
         </Grid>

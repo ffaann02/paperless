@@ -80,7 +80,7 @@ const DropdownServiceList = styled(Box)({
 
 export default function Navbar() {
     const classes = useStyles();
-    const [isSeeService, setIsSeeService] = useState(true)
+    const [isSeeService, setIsSeeService] = useState(false)
     return (
         <AppBar position="fixed" sx={{
             backgroundColor: "white", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
