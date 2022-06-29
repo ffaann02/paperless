@@ -70,7 +70,8 @@ const ContactSumbitButton = styled(Button)(({ theme }) => ({
 export default function GetInTouch() {
     const classes = useStyles();
     return (
-        <Grid container sx={{ width: "100%", height: "100%" ,marginTop:"50px",padding: "0px calc((100vw - 984px) / 2)",textAlign:"center"}}>
+        <Grid container sx={{ width: "100%", height: "100%" ,marginTop:"50px",
+        padding: {lg:"0px calc((100vw - 984px) / 2)",md:"0px calc((100vw - 984px) / 2)"},textAlign:"center"}}>
             <Grid item lg={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>GET IN TOUCH</Typography></Grid>
             <hr className={classes.underLineHead}/>
             <Grid container>

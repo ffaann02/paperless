@@ -1,5 +1,5 @@
 
-import { AppBar, Button, Drawer, Grid, styled, TextField, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Drawer, Grid, styled, TextField, Toolbar, Typography} from "@mui/material";
 import { makeStyles } from '@mui/styles'
 import { Box } from "@mui/system";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -9,6 +9,7 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ArticleIcon from '@mui/icons-material/Article';
 import ReviewsIcon from '@mui/icons-material/Reviews';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 const useStyles = makeStyles({
     logo: {
@@ -25,6 +26,10 @@ const useStyles = makeStyles({
     },
     listUnderSearch: {
         fontSize: "14px"
+    },
+    mobileSidebar:{
+        width:"90%",
+        height:"100vh"
     }
 }, { name: "MuiExample_Component" })
 const SearchButton = styled(Button)(({ theme }) => ({
@@ -81,6 +86,8 @@ const DropdownServiceList = styled(Box)({
 export default function Navbar() {
     const classes = useStyles();
     const [isSeeService, setIsSeeService] = useState(false)
+    const [sidebarOpen,setSidebarOpen] = useState(false)
+    const [toggleServiceMobile,setToggleServiceMobile] = useState(false)
     return (
         <AppBar position="fixed" sx={{
             backgroundColor: "white", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
@@ -88,11 +95,47 @@ export default function Navbar() {
         }}>
             <StyledToolbar>
                 <Grid container sx={{ with: "100%" }}>
-                    <Grid item lg={3} sx={{ display: "flex" }}>
-                        <Typography variant="h6" sx={{ color: "#EC9C04", fontWeight: "600" }}>PAPER</Typography>
-                        <Typography variant="h6" sx={{ color: "#5bccf6", fontWeight: "600" }}>LESS</Typography>
+                    <Drawer variant='temporary' open={sidebarOpen} classes={{paper: classes.mobileSidebar}}
+                     sx={{display:{lg:"none",md:"none",sm:"block",xs:"block"}}} onBackdropClick={()=>{setSidebarOpen(false)}}>
+                        <Box sx={{width:"100%",height:"100%",padding:{lg:"0",md:"0",sm:"50px",xs:"30px"}}}>
+                            <Typography variant="h5" sx={{display:"flex",fontWeight:"600",cursor:"pointer"}}>
+                                <Typography variant="a" sx={{color:"#EC9C04"}}>PAPER</Typography>
+                                <Typography variant="a" sx={{color:"#5bccf6"}}>LESS</Typography>
+                            </Typography>
+                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
+                                <Typography variant="h6">ABOUT</Typography>
+                            </Box>
+                            <Box sx={{marginTop:"20px",cursor:"pointer",display:"flex"}} onClick={()=>{setToggleServiceMobile(prev=>!prev)}}>
+                                <Typography variant="h6">SERVICE 
+                                {!toggleServiceMobile?<KeyboardArrowDownIcon sx={{paddingTop:"4px",fontSize:"24px"}}/>
+                                    :<KeyboardArrowUpIcon sx={{paddingTop:"4px",fontSize:"24px"}}/>}
+                                </Typography>
+                            </Box>
+                            {toggleServiceMobile?
+                            <Box sx={{paddingLeft:"20px"}}>
+                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><FavoriteBorderIcon sx={{fontSize:"16px"}}/> Wedding Wish</Typography>
+                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><PeopleOutlineIcon sx={{fontSize:"16px"}}/> Friendships</Typography>
+                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><CreditCardIcon sx={{fontSize:"16px"}}/> Name Card</Typography>
+                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ArticleIcon sx={{fontSize:"16px"}}/> Resume</Typography>
+                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ReviewsIcon sx={{fontSize:"16px"}}/> Review</Typography>
+                            </Box>:""}
+                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
+                                <Typography variant="h6">CONTACT</Typography>
+                            </Box>
+                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
+                                <Typography variant="h6">REGISTER</Typography>
+                            </Box>
+                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
+                                <SignInButton variant="contained" sx={{fontSize:"20px",padding:"8px 20px",margin:"0"}}>SIGN IN</SignInButton>
+                            </Box>
+                        </Box>
+                     </Drawer>
+                    <Grid item lg={3} md={3} sx={{ display: "flex" ,color:"#242F9B",cursor:"pointer"}}>
+                        <MenuIcon sx={{display:{lg:"none",md:"none",sm:"block",xs:"block",fontSize:"30px"}}} onClick={()=>{setSidebarOpen(true)}}/>
+                        <Typography variant="h6" sx={{ color: "#EC9C04", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>PAPER</Typography>
+                        <Typography variant="h6" sx={{ color: "#5bccf6", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>LESS</Typography>
                     </Grid>
-                    <Grid item lg={9} sx={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
+                    <Grid item lg={9} md={9} sx={{ display: {lg:"flex",md:"flex",sm:"none",xs:"none"}, justifyContent: "space-between", marginBottom: "2px" }}>
                         <NavbarButton variant="contained">ABOUT</NavbarButton>
                         <Box sx={{ position: "relative" }}>
                             <NavbarButton variant="contained" onMouseOver={() => {
