@@ -63,48 +63,49 @@ export default function Services() {
     const classes = useStyles();
     return (
         <Grid container sx={{ width: "100%", height: "100%" ,marginTop:"50px",padding: "0px calc((100vw - 984px) / 2)",textAlign:"center"}}>
-            <Grid item lg={12} md={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>OUR SERVICES</Typography></Grid>
+            <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>OUR SERVICES</Typography></Grid>
             <hr className={classes.underLineHead}/>
-            <Grid container sx={{height:"300px"}}>
-                <Grid item lg={4} md={4} sx={{padding:"10px 7px"}}>
+            <Grid container sx={{height:{lg:"300px",md:"300px",sm:"100%",xs:"100%"}}}>
+                <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                     <ServiceBox>
                         <img src="https://cdn-icons-png.flaticon.com/512/3656/3656940.png" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Wedding Wish</Typography>
-                        <Typography variant="a" sx={{fontSize:"16px"}}>Make your wedding easier with this service</Typography>
+                        <Typography variant="h6" sx={{fontSize:"14px"}}>Make your wedding events easier with this service</Typography>
                         <GetStartServiceButton id="serviceButton" variant="contained">VIEW SERVICE</GetStartServiceButton>
                     </ServiceBox>
                 </Grid>
-                <Grid item lg={4} md={4} sx={{padding:"10px 7px"}}>
+                <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                     <ServiceBox>
                         <img src="https://cdn-icons-png.flaticon.com/512/3314/3314642.png" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Friendships</Typography>
-                        <Typography variant="a" sx={{fontSize:"16px"}}>Keep your good moments forever on our website</Typography>
+                        <Typography variant="h6" sx={{fontSize:"14px"}}>Keep your good moments forever on our website</Typography>
                         <GetStartServiceButton id="serviceButton" variant="contained">VIEW SERVICE</GetStartServiceButton>
                     </ServiceBox>
                 </Grid>
-                <Grid item lg={4} md={4} sx={{padding:"10px 7px"}}>
+                <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},display:"flex"
+                ,marginLeft:"auto",marginRight:"auto",height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                     <ServiceBox>
                         <img src="https://cdn-icons-png.flaticon.com/512/6503/6503196.png" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Name Card</Typography>
-                        <Typography variant="a" sx={{fontSize:"16px"}}>Create name card for your business purpose</Typography>
+                        <Typography variant="h6" sx={{fontSize:"14px"}}>Create custom name card for your business purpose</Typography>
                         <GetStartServiceButton id="serviceButton" variant="contained">VIEW SERVICE</GetStartServiceButton>
                     </ServiceBox>
                 </Grid>
             </Grid>
-            <Grid container sx={{height:"300px",textAlign:"center",display:"flex",justifyContent:"center",marginLeft:"auto",marginRight:"auto"}}>
-                <Grid item lg={4} md={4} sx={{padding:"10px 7px"}}>
+            <Grid container sx={{height:{lg:"300px",md:"300px",sm:"100%",xs:"100%"},textAlign:"center",display:"flex",justifyContent:"center",marginLeft:"auto",marginRight:"auto"}}>
+                <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                 <ServiceBox>
                         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135725.png" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Resume</Typography>
-                        <Typography variant="a" sx={{fontSize:"16px"}}>Create you resume for show your work & skills</Typography>
+                        <Typography variant="h6" sx={{fontSize:"14px"}}>Create you resume for show your work & skills</Typography>
                         <Typography variant="h6" sx={{marginTop:'10px'}}>Coming soon...</Typography>
                     </ServiceBox>
                 </Grid>
-                <Grid item lg={4} md={4} sx={{padding:"10px 7px"}}>
+                <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                 <ServiceBox>
                         <img src="https://cdn-icons.flaticon.com/png/512/1365/premium/1365358.png?token=exp=1656429553~hmac=387bc068c61fd040634670bb6c691519" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Review</Typography>
-                        <Typography variant="a" sx={{fontSize:"16px"}}>Let people comment your profile and work</Typography>
+                        <Typography variant="h6" sx={{fontSize:"14px"}}>Let people comment your profile and work</Typography>
                         <Typography variant="h6" sx={{marginTop:'10px'}}>Coming soon...</Typography>
                     </ServiceBox>
                 </Grid>

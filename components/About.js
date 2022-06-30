@@ -19,7 +19,9 @@ const useStyles = makeStyles({
     },
     paperAboutUs:{
         width:"100%",
-        height:"100%"
+        ['@media (max-width:600px)']:{
+            width:"300px"
+        }
     }
 }, { name: "MuiExample_Component" })
 
@@ -45,7 +47,7 @@ export default function About() {
     const classes = useStyles();
     return (
         <Grid container sx={{ width: "100%", height: {lg:"40vh",md:"40vh",sm:"100%"} ,marginTop:"30px",padding: "0px calc((100vw - 984px) / 2)"}}>
-            <Grid item lg={8} md={8} sx={{height:"100%",padding:"20px",display:"flex",flexDirection:"column"}}>
+            <Grid item lg={8} md={8} sm={6} xs={12} sx={{height:"100%",padding:"20px",display:"flex",flexDirection:"column"}}>
             <Box sx={{textAlign:"left"}}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C",fontSize:"24px"}}>ABOUT US</Typography>
             <hr className={classes.underLineAboutUs}/></Box>
             <Typography variant="h5" sx={{fontWeight:"600",color:"#205375",fontSize:"36px"}}>We reduce paper use</Typography>
@@ -56,7 +58,7 @@ export default function About() {
             </Box>
             <GetStartAboutUsButton variant="contained">GET STARTED</GetStartAboutUsButton>
             </Grid>
-            <Grid item lg={4} md={4 }sx={{height:"100%",marginTop:"10px"}}>
+            <Grid item lg={4} md={4} sm={6} xs={12} sx={{height:"100%",marginTop:"10px",textAlign:"center"}}>
                 <img src="/paper.png" className={classes.paperAboutUs}/>
             </Grid>
         </Grid>

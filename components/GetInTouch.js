@@ -72,13 +72,13 @@ export default function GetInTouch() {
     return (
         <Grid container sx={{ width: "100%", height: "100%" ,marginTop:"50px",
         padding: {lg:"0px calc((100vw - 984px) / 2)",md:"0px calc((100vw - 984px) / 2)"},textAlign:"center"}}>
-            <Grid item lg={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>GET IN TOUCH</Typography></Grid>
+            <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>GET IN TOUCH</Typography></Grid>
             <hr className={classes.underLineHead}/>
             <Grid container>
-                <Grid item lg={6} sx={{heigt:"100%"}}>
+                <Grid item lg={6} md={6} sm={6} xs={12} sx={{heigt:"100%"}}>
                     <img src="/teamContact02.svg" className={classes.contactImg}/>
                 </Grid>
-                <Grid item lg={6} sx={{heigt:"100%",padding:"20px"}}>
+                <Grid item lg={6} md={6} sm={6} xs={12}sx={{heigt:"100%",padding:"20px"}}>
                     <Box sx={{display:"flex"}}>
                         <TextField id="name" variant="outlined" label="Name" sx={{width:"50%",marginRight:"5px"}} color="secondary"/>
                         <TextField id="lastname" variant="outlined" label="Lastname" sx={{width:"50%",marginLeft:"5px"}} color="secondary"/>
