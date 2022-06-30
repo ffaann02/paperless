@@ -1,5 +1,5 @@
 
-import { AppBar, Button, Drawer, Grid, styled, TextField, Toolbar, Typography} from "@mui/material";
+import { AppBar, Button, collapseClasses, Drawer, Grid, styled, TextField, Toolbar, Typography} from "@mui/material";
 import { makeStyles } from '@mui/styles'
 import { Box } from "@mui/system";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -10,6 +10,7 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ArticleIcon from '@mui/icons-material/Article';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
 const useStyles = makeStyles({
     logo: {
@@ -29,17 +30,20 @@ const useStyles = makeStyles({
     },
     mobileSidebar:{
         width:"90%",
-        height:"100vh"
+        height:"100vh",
+        background:"linear-gradient(to bottom, #ffffff 40%, #ffef82 100%)"
+    },
+    peopleGroupImage:{
+        width:"100%",
+        position:"absolute",
+        bottom:"0",
+        left:"0"
+    },MobileSidebarDivider:{
+        border:"1px solid #EEEEEE",
+        marginTop:"10px",
+        backgroundColor:"#EEEEEE"
     }
 }, { name: "MuiExample_Component" })
-const SearchButton = styled(Button)(({ theme }) => ({
-    borderRadius: "0 6px 6px 0",
-    backgroundColor: "#028090",
-    width: "10%",
-    "&:hover": {
-        backgroundColor: "#05668D"
-    }
-}))
 
 const NavbarButton = styled(Button)(({ theme }) => ({
     borderRadius: "10px",
@@ -97,18 +101,22 @@ export default function Navbar() {
                 <Grid container sx={{ with: "100%" }}>
                     <Drawer variant='temporary' open={sidebarOpen} classes={{paper: classes.mobileSidebar}}
                      sx={{display:{lg:"none",md:"none",sm:"block",xs:"block"}}} onBackdropClick={()=>{setSidebarOpen(false)}}>
-                        <Box sx={{width:"100%",height:"100%",padding:{lg:"0",md:"0",sm:"50px",xs:"30px"}}}>
+                        <Box sx={{width:"100%",height:"100%",padding:{lg:"0",md:"0",sm:"50px",xs:"30px",cursor:"pointer"}}}>
+                            <Box sx={{position:"absolute",top:"10px",right:"10px"}} onClick={()=>{setSidebarOpen(false)}}>
+                            <CloseIcon variant="a" sx={{color:"red",fontSize:"24px"}}/>
+                            </Box>
                             <Typography variant="h5" sx={{display:"flex",fontWeight:"600",cursor:"pointer"}}>
                                 <Typography variant="a" sx={{color:"#EC9C04"}}>PAPER</Typography>
                                 <Typography variant="a" sx={{color:"#5bccf6"}}>LESS</Typography>
                             </Typography>
+                            <hr className={classes.MobileSidebarDivider}/>
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">ABOUT</Typography>
+                                <Typography variant="h6">About</Typography>
                             </Box>
                             <Box sx={{marginTop:"20px",cursor:"pointer",display:"flex"}} onClick={()=>{setToggleServiceMobile(prev=>!prev)}}>
-                                <Typography variant="h6">SERVICE 
-                                {!toggleServiceMobile?<KeyboardArrowDownIcon sx={{paddingTop:"4px",fontSize:"24px"}}/>
-                                    :<KeyboardArrowUpIcon sx={{paddingTop:"4px",fontSize:"24px"}}/>}
+                                <Typography variant="h6">Service
+                                {!toggleServiceMobile?<KeyboardArrowDownIcon sx={{paddingTop:"4px",fontSize:"20px"}}/>
+                                    :<KeyboardArrowUpIcon sx={{paddingTop:"4px",fontSize:"20px"}}/>}
                                 </Typography>
                             </Box>
                             {toggleServiceMobile?
@@ -120,14 +128,15 @@ export default function Navbar() {
                                 <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ReviewsIcon sx={{fontSize:"16px"}}/> Review</Typography>
                             </Box>:""}
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">CONTACT</Typography>
+                                <Typography variant="h6">Contact</Typography>
                             </Box>
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">REGISTER</Typography>
+                                <Typography variant="h6">Register</Typography>
                             </Box>
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <SignInButton variant="contained" sx={{fontSize:"20px",padding:"8px 20px",margin:"0"}}>SIGN IN</SignInButton>
+                                <SignInButton variant="contained" sx={{fontSize:"20px",padding:"8px 20px",margin:"0"}}>Sign In</SignInButton>
                             </Box>
+                            <img src="people-group.png" className={classes.peopleGroupImage}/>
                         </Box>
                      </Drawer>
                     <Grid item lg={3} md={3} sx={{ display: "flex" ,color:"#242F9B",cursor:"pointer"}}>
