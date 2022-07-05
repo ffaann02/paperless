@@ -103,7 +103,7 @@ export default function Services() {
                 </Grid>
                 <Grid item lg={4} md={4} sm={6} xs={12} sx={{padding:{lg:"10px 7px",md:"10px 7px",sm:"10px 7px",xs:"0 40px"},height:{lg:"100%",md:"100%",sm:"300px",xs:"280px"}}}>
                 <ServiceBox>
-                        <img src="https://cdn-icons.flaticon.com/png/512/1365/premium/1365358.png?token=exp=1656429553~hmac=387bc068c61fd040634670bb6c691519" className={classes.serviceIcon}/>
+                        <img src="https://cdn-icons-png.flaticon.com/512/1067/1067447.png" className={classes.serviceIcon}/>
                         <Typography variant="h6" sx={{fontWeight:"600",fontSize:"24px"}}>Review</Typography>
                         <Typography variant="h6" sx={{fontSize:"14px"}}>Let people comment your profile and work</Typography>
                         <Typography variant="h6" sx={{marginTop:'10px'}}>Coming soon...</Typography>
