@@ -1,5 +1,7 @@
 import { Box, Grid, Typography, styled,Button, TextField, ThemeProvider } from "@mui/material";
 import { makeStyles } from '@mui/styles'
+import Link from "next/link"
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 const useStyles = makeStyles({
     bannerImg: {
         width: "100%",
@@ -72,7 +74,7 @@ export default function Register() {
                         </Typography>
                     </Grid>
                     <Grid order={{lg:2,md:2,sm:1,xs:1}} item lg={6} md={6} sm={12} xs={12} sx={{borderRadius:"0 20px 20px 0"
-                    ,padding:{lg:"40px 60px",md:"40px 60px",sm:"40px 60px",xs:"40px 30px"}}}>
+                    ,padding:{lg:"40px 60px",md:"40px 60px",sm:"40px 60px",xs:"40px 30px"},position:"relative"}}>
                         <Typography variant="h6" sx={{color:"white",padding:"0"}}>
                             <Typography variant="a" sx={{color:"#EC9C04",fontSize:"30px",fontWeight:"600"}}>PAPER</Typography>
                             <Typography variant="a" sx={{color:"#5bccf6",fontSize:"30px",fontWeight:"600"}}>LESS</Typography>
@@ -83,9 +85,15 @@ export default function Register() {
                             <TextField id="confirm_password" label="Confirm Password" variant="standard" type="password" sx={{width:"100%",marginTop:"10px"}}/>
                             <TextField id="email" label="Email" variant="standard" type="email" sx={{width:"100%",marginTop:"10px"}}/>
                             <Typography variant="h6" sx={{fontSize:"14px",marginTop:"20px"}}>
-                                Already a member ? <Typography variant="a" sx={{fontWeight:"600",cursor:"pointer",fontSize:"16px"}}>Log In</Typography>
+                                Already a member ? <Link href="/login"><Typography variant="a" sx={{fontWeight:"600",cursor:"pointer",fontSize:"16px"}}>Log In</Typography></Link>
                             </Typography>
                             <SubmitRegisterButton variant="contained">SIGN UP</SubmitRegisterButton>
+                            <Link href="/">
+                                <Typography variant="h6" sx={{position:"absolute",bottom:"10px",cursor:"pointer",left:"20px"}}>
+                                    <ArrowBackIosIcon sx={{fontSize:"14px",marginRight:"10px"}}/>
+                                    Back to Home
+                                </Typography>
+                            </Link>
                         </Box>
                     </Grid>
                 </Grid>

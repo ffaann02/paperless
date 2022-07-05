@@ -1,5 +1,7 @@
 import { Box, Grid, Typography, styled,Button, TextField, ThemeProvider } from "@mui/material";
 import { makeStyles } from '@mui/styles'
+import Link from "next/link"
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 const useStyles = makeStyles({
     bannerImg: {
         width: "100%",
@@ -72,7 +74,7 @@ export default function Login() {
                         </Typography>
                     </Grid>
                     <Grid order={{lg:2,md:2,sm:1,xs:1}} item lg={6} md={6} sm={12} xs={12} sx={{borderRadius:"0 20px 20px 0"
-                    ,padding:{lg:"40px 60px",md:"40px 60px",sm:"40px 60px",xs:"40px 30px"}}}>
+                    ,padding:{lg:"40px 60px",md:"40px 60px",sm:"40px 60px",xs:"40px 30px"},position:"relative"}}>
                         <Typography variant="h6" sx={{color:"white",padding:"0"}}>
                             <Typography variant="a" sx={{color:"#EC9C04",fontSize:"30px",fontWeight:"600"}}>PAPER</Typography>
                             <Typography variant="a" sx={{color:"#5bccf6",fontSize:"30px",fontWeight:"600"}}>LESS</Typography>
@@ -80,10 +82,16 @@ export default function Login() {
                         <Box sx={{width:"100%",marginTop:"40px"}}>
                             <TextField id="username" label="Username" variant="standard" type="text" sx={{width:"100%",marginTop:"20px"}}/>
                             <TextField id="password" label="Password" variant="standard" type="password" sx={{width:"100%",marginTop:"20px"}}/>
-                            <Typography variant="h6" sx={{fontSize:"14px",marginTop:"20px"}}>
-                                Don't have an account <Typography variant="a" sx={{fontWeight:"600",cursor:"pointer",fontSize:"16px"}}>Sign Up</Typography>
+                            <Typography variant="h6" sx={{fontSize:"14px",marginTop:"40px"}}>
+                                Don't have an account <Link href="/register"><Typography variant="a" sx={{fontWeight:"600",cursor:"pointer",fontSize:"16px"}}>Sign Up</Typography></Link>
                             </Typography>
                             <SubmitRegisterButton variant="contained">LOG IN</SubmitRegisterButton>
+                            <Link href="/">
+                                <Typography variant="h6" sx={{position:"absolute",bottom:"10px",cursor:"pointer",left:"20px"}}>
+                                    <ArrowBackIosIcon sx={{fontSize:"14px",marginRight:"10px"}}/>
+                                    Back to Home
+                                </Typography>
+                            </Link>
                         </Box>
                     </Grid>
                 </Grid>
