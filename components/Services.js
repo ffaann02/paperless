@@ -62,7 +62,7 @@ const GetStartServiceButton = styled(Button)(({ theme }) => ({
 export default function Services() {
     const classes = useStyles();
     return (
-        <Grid container sx={{ width: "100%", height: "100%" ,marginTop:"50px",padding: "0px calc((100vw - 984px) / 2)",textAlign:"center"}}>
+        <Grid id="service" container sx={{ width: "100%", height: "100%" ,marginTop:"50px",padding: "0px calc((100vw - 984px) / 2)",textAlign:"center"}}>
             <Grid item lg={12} md={12} sm={12} xs={12}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C"}}>OUR SERVICES</Typography></Grid>
             <hr className={classes.underLineHead}/>
             <Grid container sx={{height:{lg:"300px",md:"300px",sm:"100%",xs:"100%"}}}>

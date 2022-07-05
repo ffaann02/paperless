@@ -12,6 +12,7 @@ import ReviewsIcon from '@mui/icons-material/Reviews';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
+import {Link} from "react-scroll"
 const useStyles = makeStyles({
     logo: {
         width: "40px",
@@ -110,9 +111,11 @@ export default function Navbar() {
                                 <Typography variant="a" sx={{color:"#5bccf6"}}>LESS</Typography>
                             </Typography>
                             <hr className={classes.MobileSidebarDivider}/>
-                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">About</Typography>
-                            </Box>
+                            <Link to="about" smooth duration={1000} offset={-50} onClick={()=>{setSidebarOpen(false)}}>
+                                <Box sx={{marginTop:"20px",cursor:"pointer"}}>
+                                    <Typography variant="h6">About</Typography>
+                                </Box>
+                            </Link>
                             <Box sx={{marginTop:"20px",cursor:"pointer",display:"flex"}} onClick={()=>{setToggleServiceMobile(prev=>!prev)}}>
                                 <Typography variant="h6">Service
                                 {!toggleServiceMobile?<KeyboardArrowDownIcon sx={{paddingTop:"4px",fontSize:"20px"}}/>
@@ -127,9 +130,11 @@ export default function Navbar() {
                                 <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ArticleIcon sx={{fontSize:"16px"}}/> Resume</Typography>
                                 <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ReviewsIcon sx={{fontSize:"16px"}}/> Review</Typography>
                             </Box>:""}
+                            <Link to="contact" smooth duration={1000} offset={-100} onClick={()=>{setSidebarOpen(false)}}>
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
                                 <Typography variant="h6">Contact</Typography>
                             </Box>
+                            </Link>
                             <Box sx={{marginTop:"20px",cursor:"pointer"}}>
                                 <Typography variant="h6">Register</Typography>
                             </Box>
@@ -145,8 +150,11 @@ export default function Navbar() {
                         <Typography variant="h6" sx={{ color: "#5bccf6", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>LESS</Typography>
                     </Grid>
                     <Grid item lg={9} md={9} sx={{ display: {lg:"flex",md:"flex",sm:"none",xs:"none"}, justifyContent: "space-between", marginBottom: "2px" }}>
-                        <NavbarButton variant="contained">ABOUT</NavbarButton>
+                        <Link smooth to="about" duration={1000} offset={-430}>
+                            <NavbarButton variant="contained">ABOUT</NavbarButton>
+                        </Link>
                         <Box sx={{ position: "relative" }}>
+                            <Link smooth to="service" duration={1000} offset={-100}>
                             <NavbarButton variant="contained" onMouseOver={() => {
                                 setIsSeeService(true)
                             }} onMouseOut={() => {
@@ -155,6 +163,7 @@ export default function Navbar() {
                                 {!isSeeService ? <KeyboardArrowDownIcon sx={{ fontSize: "20px", marginBottom: "4px" }} />
                                     : <KeyboardArrowUpIcon sx={{ fontSize: "20px", marginBottom: "4px" }} />}
                             </NavbarButton>
+                            </Link>
                                 {isSeeService?
                                 <Box sx={{width: "200px", height: "240px", position: "absolute", top: "30px"
                                 ,paddingTop: "25px", marginLeft: "auto", marginRight: "auto",}} onMouseOver={() => {
@@ -192,7 +201,9 @@ export default function Navbar() {
                                     </Box>
                                 </Box>:""}
                         </Box>
-                        <NavbarButton variant="contained">CONTACT</NavbarButton>
+                        <Link to="contact" smooth duration={1000} offset={0}>
+                            <NavbarButton variant="contained">CONTACT</NavbarButton>
+                        </Link>
                         <Box>
                             <NavbarButton variant="contained">REGISTER</NavbarButton>
                             <SignInButton variant="contained" sx={{ marginLeft: "10px" }}>SIGN IN</SignInButton>

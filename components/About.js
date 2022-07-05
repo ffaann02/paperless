@@ -46,7 +46,7 @@ const GetStartAboutUsButton = styled(Button)(({ theme }) => ({
 export default function About() {
     const classes = useStyles();
     return (
-        <Grid container sx={{ width: "100%", height: {lg:"40vh",md:"40vh",sm:"100%"} ,marginTop:"30px",padding: "0px calc((100vw - 984px) / 2)"}}>
+        <Grid id="about" container sx={{ width: "100%", height: {lg:"40vh",md:"40vh",sm:"100%"} ,marginTop:"30px",padding: "0px calc((100vw - 984px) / 2)"}}>
             <Grid item lg={8} md={8} sm={6} xs={12} sx={{height:"100%",padding:"20px",display:"flex",flexDirection:"column"}}>
             <Box sx={{textAlign:"left"}}><Typography variant="h5" sx={{fontWeight:"600",color:"#112B3C",fontSize:"24px"}}>ABOUT US</Typography>
             <hr className={classes.underLineAboutUs}/></Box>
