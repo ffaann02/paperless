@@ -53,6 +53,7 @@ const SubmitRegisterButton = styled(Button)(({ theme }) => ({
     boxShadow: "none",
     color: "white",
     fontWeight:"600",
+    marginBottom:"20px",
     "&:hover": {
         backgroundColor: "#646FD4",
         boxShadow: "none",

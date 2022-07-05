@@ -45,6 +45,7 @@ const useStyles = makeStyles({
 const SubmitRegisterButton = styled(Button)(({ theme }) => ({
     width:"100%",
     marginTop:"20px",
+    marginBottom:"20px",
     borderRadius: "10px",
     padding: "8px 14px",
     border:"2px solid white",
@@ -89,7 +90,7 @@ export default function Register() {
                             </Typography>
                             <SubmitRegisterButton variant="contained">SIGN UP</SubmitRegisterButton>
                             <Link href="/">
-                                <Typography variant="h6" sx={{position:"absolute",bottom:"10px",cursor:"pointer",left:"20px"}}>
+                                <Typography variant="h6" sx={{position:"absolute",bottom:"10px",cursor:"pointer",left:"20px",fontSize:"20px"}}>
                                     <ArrowBackIosIcon sx={{fontSize:"14px",marginRight:"10px"}}/>
                                     Back to Home
                                 </Typography>

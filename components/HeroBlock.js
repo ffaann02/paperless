@@ -61,7 +61,7 @@ const SeeServiceButton = styled(Button)(({ theme }) => ({
 export default function Banner() {
     const classes = useStyles();
     return (
-        <Grid container sx={{ width: "100%", height: {lg:"90vh",md:"90vh",sm:"100%"} }}>
+        <Grid id="heroblock" container sx={{ width: "100%", height: {lg:"90vh",md:"90vh",sm:"100%"} }}>
             <Grid item lg={12} md={12} sm={12} xs={12} sx={{
                 width: "100%", height: {lg:"45vh",md:"45vh"}
                 , backgroundImage: `url(${"ShinyOverlay.png"})`, backgroundRepeat:"no-repeat",padding: "0px calc((100vw - 984px) / 2)", display: "flex"

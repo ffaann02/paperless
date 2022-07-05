@@ -107,10 +107,12 @@ export default function Navbar() {
                             <Box sx={{position:"absolute",top:"10px",right:"10px"}} onClick={()=>{setSidebarOpen(false)}}>
                             <CloseIcon variant="a" sx={{color:"red",fontSize:"24px"}}/>
                             </Box>
+                            <ScrollLink to="heroblock" smooth duration={1000} offset={-100} onClick={()=>{setSidebarOpen(false)}}>
                             <Typography variant="h5" sx={{display:"flex",fontWeight:"600",cursor:"pointer"}}>
                                 <Typography variant="a" sx={{color:"#EC9C04"}}>PAPER</Typography>
                                 <Typography variant="a" sx={{color:"#5bccf6"}}>LESS</Typography>
                             </Typography>
+                            </ScrollLink>
                             <hr className={classes.MobileSidebarDivider}/>
                             <ScrollLink to="about" smooth duration={1000} offset={-50} onClick={()=>{setSidebarOpen(false)}}>
                                 <Box sx={{marginTop:"20px",cursor:"pointer"}}>
@@ -151,8 +153,12 @@ export default function Navbar() {
                      </Drawer>
                     <Grid item lg={3} md={3} sx={{ display: "flex" ,color:"#242F9B",cursor:"pointer"}}>
                         <MenuIcon sx={{display:{lg:"none",md:"none",sm:"block",xs:"block",fontSize:"30px"}}} onClick={()=>{setSidebarOpen(true)}}/>
-                        <Typography variant="h6" sx={{ color: "#EC9C04", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>PAPER</Typography>
-                        <Typography variant="h6" sx={{ color: "#5bccf6", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>LESS</Typography>
+                        <ScrollLink to="heroblock" smooth duration={1000} offset={-100}>
+                            <Typography variant="h6" sx={{display:"flex"}}>
+                            <Typography variant="a" sx={{ color: "#EC9C04", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>PAPER</Typography>
+                            <Typography variant="a" sx={{ color: "#5bccf6", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>LESS</Typography>
+                            </Typography>
+                        </ScrollLink>
                     </Grid>
                     <Grid item lg={9} md={9} sx={{ display: {lg:"flex",md:"flex",sm:"none",xs:"none"}, justifyContent: "space-between", marginBottom: "2px" }}>
                         <ScrollLink smooth to="about" duration={1000} offset={-430}>
