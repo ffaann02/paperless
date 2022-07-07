@@ -59,10 +59,10 @@ const SeeServiceButton = styled(Button)(({ theme }) => ({
     }
 }))
 
-export default function Banner() {
+export default function Wedding() {
     const classes = useStyles();
     return (
-        
+        <Box id="content-wrapper" sx={{backgroundColor:"white",top:"60px",position:"relative",width:"100%",height:"100%"}}>
         <Grid id="heroblock" container sx={{ width: "100%", height: {lg:"90vh",md:"90vh",sm:"100%"} }}>
             <Grid item lg={12} md={12} sm={12} xs={12} sx={{
                 width: "100%", height: {lg:"45vh",md:"45vh"}
@@ -136,5 +136,6 @@ export default function Banner() {
                 </Grid>
             </Grid>
         </Grid>
+        </Box>
     )
 }

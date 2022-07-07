@@ -89,14 +89,14 @@ const DropdownServiceList = styled(Box)({
     }
 })
 
-export default function Navbar() {
+export default function ServiceNavbar() {
     const classes = useStyles();
     const [isSeeService, setIsSeeService] = useState(false)
     const [sidebarOpen,setSidebarOpen] = useState(false)
     const [toggleServiceMobile,setToggleServiceMobile] = useState(false)
     return (
         <AppBar position="fixed" sx={{
-            backgroundColor: "white", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
+            backgroundColor: "black", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
             alignItems: 'center', padding: "0px calc((100vw - 984px) / 2)"
         }}>
             <StyledToolbar>
@@ -219,9 +219,7 @@ export default function Navbar() {
                                     </Box>
                                 </Box>:""}
                         </Box>
-                        <ScrollLink to="contact" smooth duration={1000} offset={0}>
-                            <NavbarButton variant="contained">CONTACT</NavbarButton>
-                        </ScrollLink>
+                        
                         <Box>
                             <Link href="/register">
                                 <NavbarButton variant="contained">REGISTER</NavbarButton>
