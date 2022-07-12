@@ -14,37 +14,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
 import {Link as ScrollLink} from "react-scroll"
 import Link from "next/link"
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 const useStyles = makeStyles({
-    logo: {
-        width: "40px",
-        height: "50px"
-    },
-    search: {
-        border: "none",
-        fontSize: "14px",
-        borderRadius: "6px 0 0 6px",
-        height: "40px",
-        width: "90%",
-        padding: "0 10px"
-    },
-    listUnderSearch: {
-        fontSize: "14px"
-    },
-    mobileSidebar:{
-        width:"90%",
-        height:"100vh",
-        background:"linear-gradient(to bottom, #ffffff 40%, #ffef82 100%)"
-    },
-    peopleGroupImage:{
-        width:"100%",
-        position:"absolute",
-        bottom:"0",
-        left:"0"
-    },MobileSidebarDivider:{
-        border:"1px solid #EEEEEE",
-        marginTop:"10px",
-        backgroundColor:"#EEEEEE"
-    }
+    
 }, { name: "MuiExample_Component" })
 
 const NavbarButton = styled(Button)(({ theme }) => ({
@@ -96,93 +68,39 @@ export default function ServiceNavbar() {
     const [toggleServiceMobile,setToggleServiceMobile] = useState(false)
     return (
         <AppBar position="fixed" sx={{
-            backgroundColor: "black", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
+            backgroundColor: "#3B3F46", width: "100%", boxShadow: "0 2px 10px rgb(0 0 0 / 0.125)", height: "60px",
             alignItems: 'center', padding: "0px calc((100vw - 984px) / 2)"
         }}>
             <StyledToolbar>
                 <Grid container sx={{ with: "100%" }}>
-                    <Drawer variant='temporary' open={sidebarOpen} classes={{paper: classes.mobileSidebar}}
-                     sx={{display:{lg:"none",md:"none",sm:"block",xs:"block"}}} onBackdropClick={()=>{setSidebarOpen(false)}}>
-                        <Box sx={{width:"100%",height:"100%",padding:{lg:"0",md:"0",sm:"50px",xs:"30px",cursor:"pointer"}}}>
-                            <Box sx={{position:"absolute",top:"10px",right:"10px"}} onClick={()=>{setSidebarOpen(false)}}>
-                            <CloseIcon variant="a" sx={{color:"red",fontSize:"24px"}}/>
-                            </Box>
-                            <ScrollLink to="heroblock" smooth duration={1000} offset={-100} onClick={()=>{setSidebarOpen(false)}}>
-                            <Typography variant="h5" sx={{display:"flex",fontWeight:"600",cursor:"pointer"}}>
-                                <Typography variant="a" sx={{color:"#EC9C04"}}>PAPER</Typography>
-                                <Typography variant="a" sx={{color:"#5bccf6"}}>LESS</Typography>
-                            </Typography>
-                            </ScrollLink>
-                            <hr className={classes.MobileSidebarDivider}/>
-                            <ScrollLink to="about" smooth duration={1000} offset={-50} onClick={()=>{setSidebarOpen(false)}}>
-                                <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                    <Typography variant="h6">About</Typography>
-                                </Box>
-                            </ScrollLink>
-                            <Box sx={{marginTop:"20px",cursor:"pointer",display:"flex"}} onClick={()=>{setToggleServiceMobile(prev=>!prev)}}>
-                                <Typography variant="h6">Service
-                                {!toggleServiceMobile?<KeyboardArrowDownIcon sx={{paddingTop:"4px",fontSize:"20px"}}/>
-                                    :<KeyboardArrowUpIcon sx={{paddingTop:"4px",fontSize:"20px"}}/>}
-                                </Typography>
-                            </Box>
-                            {toggleServiceMobile?
-                            <Box sx={{paddingLeft:"20px"}}>
-                                <Link href="/wedding">
-                                    <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><FavoriteBorderIcon sx={{fontSize:"16px"}}/> Wedding Wish</Typography>
-                                </Link>
-                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><PeopleOutlineIcon sx={{fontSize:"16px"}}/> Friendships</Typography>
-                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><CreditCardIcon sx={{fontSize:"16px"}}/> Name Card</Typography>
-                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ArticleIcon sx={{fontSize:"16px"}}/> Resume</Typography>
-                                <Typography variant="h6" sx={{fontSize:"16px",marginTop:"10px"}}><ReviewsIcon sx={{fontSize:"16px"}}/> Review</Typography>
-                            </Box>:""}
-                            <ScrollLink to="contact" smooth duration={1000} offset={-80} onClick={()=>{setSidebarOpen(false)}}>
-                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">Contact</Typography>
-                            </Box>
-                            </ScrollLink>
-                            <Link href="/register">
-                            <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                <Typography variant="h6">Register</Typography>
-                            </Box>
-                            </Link>
-                            <Link href="/login">
-                                <Box sx={{marginTop:"20px",cursor:"pointer"}}>
-                                    <SignInButton variant="contained" sx={{fontSize:"20px",padding:"8px 20px",margin:"0"}}>Sign In</SignInButton>
-                                </Box>
-                            </Link>
-                            <img src="people-group.png" className={classes.peopleGroupImage}/>
-                        </Box>
-                     </Drawer>
                     <Grid item lg={3} md={3} sx={{ display: "flex" ,color:"#242F9B",cursor:"pointer"}}>
                         <MenuIcon sx={{display:{lg:"none",md:"none",sm:"block",xs:"block",fontSize:"30px"}}} onClick={()=>{setSidebarOpen(true)}}/>
                         <Link href="/">
                         <ScrollLink to="heroblock" smooth duration={1000} offset={-100}>
-                            <Typography variant="h6" sx={{display:"flex"}}>
+                            <Typography variant="h6" sx={{display:"flex",marginBottom:"5px","&:hover #homeButton":{
+                                color:"white"
+                            }}}>
+                            <HomeOutlinedIcon id="homeButton" sx={{color:"#7f838a",fontSize:"30px",marginRight:"10px"}}/>
                             <Typography variant="a" sx={{ color: "#EC9C04", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>PAPER</Typography>
                             <Typography variant="a" sx={{ color: "#5bccf6", fontWeight: "600" ,display:{lg:"block",md:"block",sm:"none",xs:"none"}}}>LESS</Typography>
                             </Typography>
                         </ScrollLink>
                         </Link>
                     </Grid>
-                    <Grid item lg={9} md={9} sx={{ display: {lg:"flex",md:"flex",sm:"none",xs:"none"}, justifyContent: "space-between", marginBottom: "2px" }}>
-                        <ScrollLink smooth to="about" duration={1000} offset={-430}>
-                            <NavbarButton variant="contained">ABOUT</NavbarButton>
-                        </ScrollLink>
-                        
-                        <Box sx={{ position: "relative" }}>
-                            <ScrollLink smooth to="service" duration={1000} offset={-100}>
-                            <NavbarButton variant="contained" onMouseOver={() => {
-                                setIsSeeService(true)
-                            }} onMouseOut={() => {
-                                setIsSeeService(false)
-                            }}>SERVICES
-                                {!isSeeService ? <KeyboardArrowDownIcon sx={{ fontSize: "20px", marginBottom: "4px" }} />
-                                    : <KeyboardArrowUpIcon sx={{ fontSize: "20px", marginBottom: "4px" }} />}
-                            </NavbarButton>
-                            </ScrollLink>
-                                {isSeeService?
-                                <Box sx={{width: "200px", height: "240px", position: "absolute", top: "30px"
-                                ,paddingTop: "25px", marginLeft: "auto", marginRight: "auto",}} onMouseOver={() => {
+                    <Grid item lg={6} md={6} sx={{marginTop:"5px",justifyContent:"center",textAlign:"center",cursor:"pointer"}}>
+                        <Box sx={{position:"relative",display:"inline-block",marginLeft:"auto",marginRight:"auto"}}
+                        onMouseOver={() => {
+                            setIsSeeService(true)
+                        }} onMouseOut={() => {
+                            setIsSeeService(false)
+                        }}>
+                        <Typography variant="h6" sx={{display:"flex",marginLeft:"auto",marginRight:"auto",justifyContent:"center"}}>
+                            <Typography variant="a" sx={{fontSize:"16px"}}>Wedding Wish</Typography>
+                            {isSeeService? <KeyboardArrowUpIcon sx={{fontSize:"20px",marginLeft:"2px",marginTop:"2px"}}/>
+                            :<KeyboardArrowDownIcon sx={{fontSize:"20px",marginLeft:"2px",marginTop:"2px"}}/>}
+                        </Typography>
+                        {isSeeService?<Box sx={{width: "200px", height: "240px", position: "absolute", top: "10px",
+                                paddingTop: "40px",marginLeft: "auto", marginRight: "auto",}} onMouseOver={() => {
                                     setIsSeeService(true)
                                 }} onMouseOut={() => {
                                     setIsSeeService(false)
@@ -217,17 +135,8 @@ export default function ServiceNavbar() {
                                                 </Typography>
                                         </DropdownServiceList>
                                     </Box>
-                                </Box>:""}
-                        </Box>
-                        
-                        <Box>
-                            <Link href="/register">
-                                <NavbarButton variant="contained">REGISTER</NavbarButton>
-                            </Link>
-                            <Link href="/login">
-                                <SignInButton variant="contained" sx={{ marginLeft: "10px" }}>SIGN IN</SignInButton>
-                            </Link>
-                        </Box>
+                            </Box>:""}
+                        </Box> 
                     </Grid>
                 </Grid>
             </StyledToolbar>
