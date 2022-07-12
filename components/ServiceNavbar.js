@@ -115,28 +115,40 @@ export default function ServiceNavbar() {
                                             </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
+                                            <Link href="/friendships">
                                             <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <PeopleOutlineIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Friendships</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/namecard">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <CreditCardIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Name Card</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/resume">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <ArticleIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Resume</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList sx={{borderBottom:"none",display:"flex"}}>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/review">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <ReviewsIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Review</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                     </Box>
                             </Box>:""}
                         </Box> 
+                    </Grid>
+                    <Grid item lg={3} md={3} sx={{textAlign:"right"}}>
+                        <Typography variant="a" sx={{cursor:"pointer"}}>REGISTER</Typography>
+                        <SignInButton variant="contained" sx={{ marginLeft: "20px" }}>SIGN IN</SignInButton>
                     </Grid>
                 </Grid>
             </StyledToolbar>

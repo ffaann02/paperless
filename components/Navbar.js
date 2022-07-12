@@ -197,24 +197,32 @@ export default function Navbar() {
                                             </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
+                                            <Link href="/friendships">
                                             <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <PeopleOutlineIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Friendships</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/namecard">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <CreditCardIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Name Card</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/resume">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <ArticleIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Resume</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                         <DropdownServiceList sx={{borderBottom:"none",display:"flex"}}>
-                                        <Typography variant="a" sx={{color:"black",display:"flex"}}>
+                                            <Link href="/review">
+                                            <Typography variant="a" sx={{color:"black",display:"flex"}}>
                                                 <ReviewsIcon/><Typography variant="a" sx={{marginLeft:"10px"}}>Review</Typography>
-                                                </Typography>
+                                            </Typography>
+                                            </Link>
                                         </DropdownServiceList>
                                     </Box>
                                 </Box>:""}
@@ -227,7 +235,7 @@ export default function Navbar() {
                                 <NavbarButton variant="contained">REGISTER</NavbarButton>
                             </Link>
                             <Link href="/login">
-                                <SignInButton variant="contained" sx={{ marginLeft: "10px" }}>SIGN IN</SignInButton>
+                                <SignInButton variant="contained" sx={{ marginLeft: "10px"}}>SIGN IN</SignInButton>
                             </Link>
                         </Box>
                     </Grid>
